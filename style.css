@@ -10,17 +10,54 @@ body {
 	text-align: center;
 	background-image:url(images/back.png);
 }
- button.new {
-   background: -moz-linear-gradient(#FFF5EE, #FFFAF0, #F0F8FF);
-   background: -webkit-gradient(linear, 0 0, 0  100%, from(#D0ECF4), to(#D0ECF4), color-stop(0.5, #5BC9E1));
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF5EE', endColorstr='#F0F8FF');
-   padding: 3px 7px;
-   color: #333;
-   -moz-border-radius: 11px;
-   -webkit-border-radius: 9px;
-   border-radius: 7px;
-   border: 1px solid #666;
-  }
+ .btn {
+	position: relative;
+    overflow: hidden;
+    z-index: 1;
+	padding: 10px 40px;
+	margin: 0 20px;
+	font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    line-height: 30px;
+    color: white;
+    font-size: 15px;    
+    text-transform: uppercase;
+	background: #f5b08f;
+	border-width: 0;
+    box-shadow: 5px 5px 0 #532831;
+	outline: none;
+	cursor: pointer;
+    transition: 1.5s;
+}
+.btn:before,
+.btn:after {
+	content: "";
+	position: absolute;  
+    height: 200px;
+    left: -50%;
+    margin-top: -100px;    
+    top: 50%;
+    width: 200px;
+	border-radius: 50%;
+    opacity: 0.3;
+    z-index: -1;
+    transform: scale(0);
+}
+.btn:before {
+	background: #ffeede;   
+    transition: .8s ease-out;
+}
+.btn:after {   
+    transition: .4s ease-in .3s;
+}
+.btn:hover {
+    color: #532831;
+}
+.btn:hover:before,
+.btn:hover:after{
+    opacity: 1;
+    transform: scale(4);
+}
 
 * html body {
 	line-height: 14px;
