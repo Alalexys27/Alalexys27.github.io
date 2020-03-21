@@ -6,21 +6,21 @@ let by = [];
 
 var dragobject={
 	z: 0, x: 0, y: 0, offsetx : null, offsety : null, targetobj : null, dragapproved : 0,
-	initialize:function(){
-	document.onmousedown=this.drag;
-	document.onmouseup=function(){this.dragapproved=0;
-	window.toffsetx = [];
-        window.toffsety = [];
-	window.list1 = [];
-	window.bx = [];
-	window.by = [];
-	}
+	initialize:function()
+		{
+		document.onmousedown=this.drag;
+		document.onmouseup=function(){this.dragapproved=0;
+		window.toffsetx = [];
+        	window.toffsety = [];
+		window.list1 = [];
+		window.bx = [];
+		window.by = [];
+		}
 	},
 
 drag:function(e){
 	var evtobj=window.event? window.event : e
 	this.targetobj=window.event? event.srcElement : e.target
-
 
 		if (this.targetobj.className=="dragt" || this.targetobj.className=="dragb")
 		{
@@ -40,19 +40,14 @@ drag:function(e){
 					window.toffsety = this.offsety;
 				}
 
-
-
                     	window.list1 = document.querySelectorAll(".dragb");
 
 			for (let i = 0; i < window.list1.length; i++) 
 			{
-
-					window.bx[i] = parseInt(window.list1.item(i).style.left);
-					window.by[i] = parseInt(window.list1.item(i).style.top);
-				
+				window.bx[i] = parseInt(window.list1.item(i).style.left);
+				window.by[i] = parseInt(window.list1.item(i).style.top);
 			}
 			
-
 			if (evtobj.preventDefault)
 				evtobj.preventDefault()
 		
@@ -61,19 +56,15 @@ drag:function(e){
 	},
 moveit:function(e)
 {
-
 	var evtobj=window.event? window.event : e
 	
 	if (this.dragapproved==1)
 	{
-
 		this.targetobj.style.left=this.offsetx+evtobj.clientX-this.x+"px";
 		this.targetobj.style.top=this.offsety+evtobj.clientY-this.y+"px"; 	
 
 		if (this.targetobj.className=="dragt")
-		{
-
-					
+		{	
 		 	for (let i = 0; i < window.list1.length; i++) 
 			{
 				let l1=parseInt(window.list1.item(i).style.left);
@@ -86,10 +77,7 @@ moveit:function(e)
                 		window.list1.item(i).style.top =  (window.by[i] + parseInt(this.targetobj.style.top)   - window.toffsety) + 'px';
 				}
 			}
-
-		}			
-
-		
+		}				
 	return false
 	}
 }	
