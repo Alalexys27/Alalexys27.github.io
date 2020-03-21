@@ -156,7 +156,6 @@ a:hover, a:active {
 #left2 {
 	border: 6px solid #FFFFFF;
 	float: left;
-	
 	width: 263px;
 	height:590px;
 	padding-left: 15px;
@@ -167,8 +166,6 @@ a:hover, a:active {
 	font-size: 30px;
 	background: url(images/ch.jpg);
 	padding-left: 15px;
-	
-	
 }
 
 #nav {
@@ -197,7 +194,6 @@ a:hover, a:active {
 }
 
 #right2 {
-	
 	border: 6px solid #FFFFFF;
 	float: left;
 	height: 605px;
