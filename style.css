@@ -13,10 +13,9 @@ body {
  button.new {
    background: -moz-linear-gradient(#FFF5EE, #FFFAF0, #F0F8FF);
    background: -webkit-gradient(linear, 0 0, 0  100%, from(#D0ECF4), to(#D0ECF4), color-stop(0.5, #5BC9E1));
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF5EE', endColorstr='#F0F8FF');
    padding: 3px 7px;
    color: #333;
-   font-size: 13px;
    -moz-border-radius: 11px;
    -webkit-border-radius: 9px;
    border-radius: 7px;
