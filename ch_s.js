@@ -72,7 +72,7 @@ moveit:function(e)
 				let t1=parseInt(window.list1.item(i).style.top);
 				let t2=parseInt(this.targetobj.style.top);
 				
-				if((l1-20)>l2 && t1>(t2+20) && (l2+315) > (l1 + 50) && (t1+10)<(t2+420)){
+				if((l1-20)>l2 && t1>(t2+20) && (l2+315) > (l1 + 50) && (t1+10)<(t2+410)){
 				window.list1.item(i).style.left = (window.bx[i] + parseInt(this.targetobj.style.left) - window.toffsetx) + 'px';
                 		window.list1.item(i).style.top =  (window.by[i] + parseInt(this.targetobj.style.top)   - window.toffsety) + 'px';
 				}
