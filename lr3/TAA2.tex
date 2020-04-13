@@ -12,6 +12,8 @@
 \usepackage[pdftex]{graphicx}   % пакет для включения рисунков в форматах png,pdf,jpg,mps,tif
                                 % надо компилировать сразу в pdf
 \usepackage{amsfonts}           % греческие символы и, возможно, что-то ещё
+\usepackage{xcolor}
+\usepackage{hyperref}
 \usepackage{indentfirst}        % одинаковый отступ для первого параграфа и всего остального
 \usepackage{cite}               % команда /cite{1,2,7,9} даёт ссылки
 \usepackage{multirow}           % пакет для объединения строк в таблице: надо указать число строк и ширину столбца
@@ -19,6 +21,10 @@
 \usepackage{amsmath}
 \linespread{1.3}                % полтора интервала. Если 1.6, то два интервала
 \pagestyle{plain}               % номерует страницы
+\definecolor{linkcolor}{HTML}{799B03} % цвет ссылок
+\definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
+
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
 \bibliographystyle{gost780s}
 \begin{document}
 \begin{titlepage}
@@ -65,10 +71,32 @@
 
 \tableofcontents
 \newpage
+\section{График}
+\label{sec:sec0}
+\begin{figure}[h]
+	\center{\includegraphics[scale=0.70]{plot}}
+	\caption{График}
+	\label{fig:plot}
+\end{figure}
+Команды, выполняемые для построения графика, представленного на рисунке \ref{fig:plot}:\\
+gnuplot> set term png\\
+gnuplot> set xlabel "Month"\\   
+gnuplot> set ylabel "Rub."  \\  
+gnuplot> set title 'Salaries in software development for 36 months 2017-2019 (Primorsky Territory)'  \\
+gnuplot> set grid\\
+gnuplot> set output "plot.png"\\   
+gnuplot> plot [0:40][33000:72000] 'data.txt' w lp lw 2 pt 7 title 'The salary','aprdata.txt' w li lw 3 lt 0 title 'Approximation'\\
+
+Исходные данные получены на сайте \href{https://www.gks.ru/labor_market_employment_salaries}{gks.ru}. 
+
+Аппроксимация исходных данных производилась по формуле полиномиальной аппроксимации 6 степени. Формула получена с помощью Excel, методом определения линии тренда. Далее по формуле вычислены новые, аппроксимированные данные. Формула  представлена ниже под номером \ref{eq:apr}.
+\begin{eqnarray}\label{eq:apr}
+\ y = 0,0003128136689412*x^6 - 0,0316730617668952*x^5 + \nonumber \\ +1,60478721331394*x^4 - 48,459353294204*x^3 + 727,163285014168*x^2 - \nonumber \\- 3 417,45801142168*x + 42 621,6967050347
+\end{eqnarray}
+\newpage
 \section{Рисунки и формулы}
 \label{sec:sec1}
 Работа выполнена в рамках курса мультмедиатехнологии. В следующем параграфе на рисунке \ref{fig:i1} мы можем видеть приход весны, на рисунке \ref{fig:i2} птичку, на рисунке \ref{fig:i3} цветы. В разделе \ref{sec:sec2} изображены таблицы.
-
 Кроме всего прочего, здесь представлены ссылки на литературу.
 
 
